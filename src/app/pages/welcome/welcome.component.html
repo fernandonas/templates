@@ -1,0 +1,28 @@
+<button (click)="enableFirstForm()">Habilitar 1 Form</button>
+@if (firstForm && firstNameControl) {
+<form [formGroup]="firstForm">
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" />
+    <label for="name">Text</label>
+    <input id="name" type="text" formControlName="text" />
+    <label for="name">Text2</label>
+    <input id="name" type="text" formControlName="text2" />
+</form>
+<button (click)="disableFirstForm()">Desabilitar 1</button>
+}
+<br>
+<button (click)="enableSecondForm()">Habilitar 2 Form</button>
+@if (secondForm && secondNameControl) {
+<form [formGroup]="secondForm">
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" />
+    <label for="name">Text</label>
+    <input id="name" type="text" formControlName="text" />
+    <label for="name">Text2</label>
+    <input id="name" type="text" formControlName="text2" />
+</form>
+<button (click)="disableSecondForm()">Desabilitar 2</button>
+}
+<br>
+
+<button [disabled]="!isValidForms()">{{isValidForms()}}</button>
