@@ -119,7 +119,8 @@ export class WelcomeComponent implements OnInit {
   }
 
   disableFirstForm(): void {
-    this.firstForm = this.formBuilder.group({})
+    this.firstForm = this.formBuilder.group({});
+    this.isValidForms = this.checkIfValidForms();
   }
 
   enableSecondForm(): void {
@@ -159,6 +160,7 @@ export class WelcomeComponent implements OnInit {
 
   disableSecondForm(): void {
     this.secondForm = this.formBuilder.group({})
+    this.isValidForms = this.checkIfValidForms();
   }
 
   getControlsByNames(controlNames: string[], formGroup: FormGroup): AbstractControl[] {
